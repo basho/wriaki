@@ -114,7 +114,7 @@ history() ->
 
 %% @spec format_time(datetime()) -> iolist()
 %% @doc format a history timestamp for display in HTML
-format_time(EpochSecs) ->
+format_time(TS) ->
     MicroSecs = TS rem 1000000,
     Secs = ((TS-MicroSecs) div 1000000) rem 1000000,
     MegaSecs = (TS-Secs*1000000-MicroSecs) div 1000000000000,
