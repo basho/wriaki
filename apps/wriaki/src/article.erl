@@ -142,7 +142,7 @@ get_timestamp(Article) ->
 
 update_version(Article) ->
     {MS, S, _US} = now(),
-    TS = 1000000*MS+S,
+    TS = 1000000000000*MS + 1000000*S + US,
     wobj:set_json_field(
       wobj:set_json_field(Article, ?F_TS, TS),
       ?F_VERSION, list_to_binary(
